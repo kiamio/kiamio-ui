@@ -34,7 +34,6 @@
     background-size: 6px 6px, 6px 6px, 100% 100%;
     background-repeat: no-repeat;
 
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
     transition:
         border-color var(--kio-transition-fast),
         box-shadow var(--kio-transition-fast),
@@ -44,13 +43,11 @@
 
 .select:hover {
     border-color: var(--kio-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .select:focus {
     outline: none;
     border-color: var(--kio-primary);
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
 }
 
 .select:active {
@@ -61,7 +58,6 @@
     opacity: 0.55;
     cursor: not-allowed;
     background-color: #f5f5f5;
-    box-shadow: none;
 }
 
 .select option {
