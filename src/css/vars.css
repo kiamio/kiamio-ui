@@ -1,20 +1,18 @@
 :root {
-    /* Escala base */
+    --kio-primary: #2563eb;
+    --kio-primary-hover: color-mix(in srgb, var(--kio-primary) 85%, black);
     --kio-background: #181818;
+    --kio-second: #242424; 
     --kio-size: 1rem;
     --kio-radius: .4375rem; /* 7px */
     --kio-transition: .2s ease;
 
-    /* Cores */
-    --kio-primary: #2563eb;
-    --kio-primary-hover: color-mix(in srgb, var(--kio-primary) 85%, black);
 
     --kio-background: #ffffff;
     --kio-surface: #f8fafc;
     --kio-text: #111827;
     --kio-border: #d1d5db;
 
-    /* Tipografia */
     --kio-font-size: var(--kio-size);
     --kio-font-family:
         -apple-system,
@@ -32,7 +30,6 @@
     --kio-space-lg: calc(var(--kio-size) * 1);
     --kio-space-xl: calc(var(--kio-size) * 1.5);
 
-    /* Componentes */
-    --kio-border-radius: var(--kio-radius);
+    --kio-border-radius: 3px;
     --kio-transition-fast: var(--kio-transition);
 }

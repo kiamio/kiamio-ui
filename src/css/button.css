@@ -2,39 +2,71 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    gap: 8px;
-
-    padding: 12px 20px;
-
+    position: relative;
+    overflow: hidden;
+    gap: 10px; 
+    padding: 14px 28px; 
     border: none;
-    border-radius: var(--kio-border-radius);
-
+    border-radius: var(--kio-border-radius, 8px); 
     background: var(--kio-primary);
     color: var(--kio-white);
-
-    font-family: var(--kio-font-family);
+    font-family: var(--kio-font-family), sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-
     cursor: pointer;
-
-    transition:
-        background-color var(--kio-transition-fast),
-        transform var(--kio-transition-fast);
+    letter-spacing: 0.3px; 
+    
+    /* Mantendo apenas a transição de cor, que é suave e profissional */
+    transition: background-color var(--kio-transition-fast, 0.2s) ease;
+    
+    /* Sombra fixa, discreta e moderna (estilo Tailwind/Design profissional) */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
 }
+
 .kio-btn:hover {
     background: var(--kio-primary-hover);
-    filter: brightness(1.2);
+    /* Removido o transform: translateY e as sombras espalhafatosas */
 }
 
+/* O estado active não precisa mais redefinir o transform, pois ele não se mexe */
 .kio-btn:active {
-    transform: translateY(1px) scale(0.98);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    filter: brightness(0.95); /* Dá um feedback visual sutil de clique sem mover o botão */
+}
+
+.kio-btn:focus-visible {
+    outline: 3px solid var(--kio-primary);
+    outline-offset: 2px;
+}
+
+.kio-btn::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2); 
+    opacity: 0;
+    pointer-events: none;
+}
+
+.kio-btn:active::after {
+    animation: kio-ripple 0.4s cubic-bezier(0.1, 0.8, 0.3, 1); 
+}
+
+@keyframes kio-ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(30); 
+        opacity: 0;
+    }
 }
 
 .kio-btn:disabled {
-    opacity: .5;
+    opacity: 0.6;
     cursor: not-allowed;
+    filter: none !important;
 }
