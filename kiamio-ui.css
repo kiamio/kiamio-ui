@@ -1,7 +1,7 @@
-@import url("src/css/vars.css");
-@import url("src/css/grid.css");
-@import url("src/css/button.css");
-@import url("src/css/input.css");
-@import url("src/css/textarea.css");
-@import url("src/css/select.css");
+@import url("./src/css/vars.css");
+@import url("./src/css/grid.css");
+@import url("./src/css/button.css");
+@import url("./src/css/input.css");
+@import url("./src/css/textarea.css");
+@import url("./src/css/select.css");
 
